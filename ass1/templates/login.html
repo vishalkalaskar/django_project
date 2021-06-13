@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UserLogin Page</title>
+</head>
+<body>
+{% if massage == "valid"%}
+   <h1>Welcome To: {{mass1}}</h1>
+{% elif massage == "invalid"%}
+   <h1>sorry! invalid user and password</h1>
+{% else%}
+   <form method="post" action="/login/">
+     {%csrf_token%}
+      <table align="center" border="0">
+
+
+          <tr>
+             <th colspan = "7"> User Login</th>
+          </tr>
+
+          <tr>
+            <td>UserName</td>
+            <td><input type="text" required name= "sname"></td>
+
+          </tr>
+
+          <tr>
+             <td>password </td>
+             <td><input type="password" required name="pass"></td>
+
+          </tr>
+
+          <tr>
+              <td>Type</td>
+              <td><input type="text" required list="type">
+                  <datalist id="type">
+                      <option value="Admin" name="b1"></option>
+                      <option value="Employee" name="b2"></option>
+                      <option value="Customer" name="b3"></option>
+                  </datalist>
+
+          </tr>
+
+
+          <tr>
+            <th colspan="7"><button type="submit" >Login</button> </th>
+          </tr>
+
+      </table>
+   </form>
+
+{%endif%}
+
+
+
+</body>
+</html>
