@@ -12,3 +12,4 @@ def succesfull(request):
 
     else:
        return render(request, "error.html")
+#value
