@@ -24,15 +24,21 @@ def calculation(request):
            mul= first_n * second_n
            return render(request, "calculator.html", {"Res": mul})
 
-        if "b4" in request.POST:
-            if second_n != 0:
-              div = first_n / second_n
-              return render(request, "calculator.html", {"Res": div})
-            else:
-              err= "divisor is zero"
-              return render(request, "calculator.html", {"Res": err})
+        elif "b4" in request.POST:
+            div = first_n / second_n
+            return render(request, "calculator.html. {"Res": div})
+#        if "b4" in request.POST:                   
+#             if second_n != 0:
+#               div = first_n / second_n
+#               return render(request, "calculator.html", {"Res": div})
+#             else:
+#               err= "divisor is zero"
+#               return render(request, "calculator.html", {"Res": err})
      except ValueError:
          err= "Incorrect value"
+         return render(request,"calculator.html",{"Res":err})
+     except ZeroDivisionError:
+         err= "Divisor is zero"
          return render(request,"calculator.html",{"Res":err})
 
    else:
